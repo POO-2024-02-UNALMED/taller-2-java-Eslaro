@@ -6,7 +6,7 @@ public class Auto {
 	Asiento[] asientos;
 	String marca;
 	Motor motor;
-	int registro;
+	int registro;	
 	String cantidadCreados;
 	
 	public int cantidadAsientos(){
@@ -19,10 +19,13 @@ public class Auto {
 	    return contador;
 	}
 	public String verificarIntegridad(){
-		if(Asiento.registro == Motor.registro) {
+		for(Asiento asiento: asientos) {
+			if (asiento.registro != registro || asiento.registro != Motor.registro || Motor.registro != registro) {
+				return "Las piezas no son originales";
+			}
 			return "Auto original";
-			
 		}
+			
 		return "Las piezas no son originales";
 	}
 }
