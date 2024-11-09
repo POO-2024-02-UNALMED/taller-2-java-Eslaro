@@ -5,9 +5,9 @@ public class Asiento {
     int precio;
     int registro;
     public void cambiarColor(String nuevoColor) {
-        String[] coloresPermitidos = {"Azul", "Negro", "Rojo", "Blanco", "Gris"};	        
+        String[] coloresPermitidos = {"azul", "Negro", "Rojo", "Blanco", "Gris"};	        
         for (String colorPermitido : coloresPermitidos) {
-            if (colorPermitido.equals(nuevoColor)) {
+            if (colorPermitido.equalsIgnoreCase(nuevoColor)) {
                 this.color = nuevoColor;
                 return; 
             }
